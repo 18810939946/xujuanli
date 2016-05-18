@@ -16,8 +16,9 @@ window.onscroll=function(){//滚轮事件
 $(function(){
     $(".RenNav li").click(function(){
         $(this).addClass("selectBod").siblings().removeClass("selectBod");
-    })
+    });
     $(".Rental-left dl a").click(function(){
+        $(this).css({color:"#e9b919"}).parents("dl").siblings().find("a").css({color:"#000"});
         $(this).css({color:"#e9b919"}).parent("p").siblings().find("a").css({color:"#000"});
     })
 });

@@ -4,11 +4,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>信诺全球租车-预约状态</title>
+    <title>信诺全球租车-国际驾照支付成功</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="shortcut icon" type="image/ico" href="http://cn.ae-asia.com/favicon.ico">
     <link rel="stylesheet" href="css/quanqiuzuche.css">
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/HomeTab.js"></script>
 </head>
 <body>
     <!-- topbar start -->
@@ -42,51 +44,50 @@
                     <a class="nav-item" href="CarRental.html" title="租车问答">租车问答</a>
                 </li>
                 <li class="home-navUl-border">
-                    <a class="nav-item" href="MyOrders.html" title="我的订单">我的订单</a>
+                    <a class="nav-item" href="javascript:;" title="我的订单">我的订单</a>
                 </li>
             </ul>
         </div>
     </div>
     <!--间隔-->
     <div class="home-interval"></div>
-    <!--选择车型-->
+    <!--国际驾照-->
     <div class="selectCar">
         <div class="selNav">
             <div class="home-layout clearfix">
                 <div class="NavCenter">
-                    <p><img src="images/SelectModels/number1.png"/>选择车型</p>
-                    <p><img src="images/SelectModels/number2.png"/>车辆信息</p>
-                    <p><img src="images/SelectModels/number3.png"/>填写订单</p>
-                    <p><img src="images/SelectModels/number4.png"/>在线支付</p>
-                    <p class="bd-yel"><img src="images/SelectModels/number5.png"/>预订成功</p>
+                    <p><img src="images/SelectModels/number1.png"/>确认填写订单</p>
+                    <p><img src="images/SelectModels/number2.png"/>在线支付</p>
+                    <p class="bd-yel"><img src="images/SelectModels/number3.png"/>支付成功</p>
                 </div>
             </div>
         </div>
-    </div>
-    <!--预订内容-->
-    <div class="orderFinish">
-        <div class="home-layout clearfix">
-            <div class="finishMain">
-                <!--成功-->
-                <div class="sucText">
-                    <img src="./images/SelectModels/smile.png" alt="" class="smile"/>
-                    <h1>预祝您出行愉快！</h1>
-                    <h2>订单编号：<span>394828438482798</span></h2>
-                    <h3>页面<b>30秒</b>后会自动跳转订单详情哦～</h3>
-                    <p class="other">您可以：<a href="javascript:;">我的订单</a><a href="javascript:;">常见问题</a></p>
-                </div>
-                <!--失败-->
-                <!--<div class="sucText">
-                    <img src="./images/SelectModels/warn.png" alt="" class="smile"/>
-                    <h1>抱歉，您支付失败</h1>
-                    <h2>订单编号：<span>394828438482798</span></h2>
-                    <h3><input type="button" value="返回重新支付"/></h3>
-                    <p class="other">您可以：<a href="javascript:;">我的订单</a><a href="javascript:;">常见问题</a></p>
-                </div>-->
-                <!--成功-失败-end-->
-                <div class="sucFocus">
-                    <img src="images/weixin.jpg"/>
-                    <p>扫描二维码随时随<br/>地关注您订单信息</p>
+        <!--国际驾照-支付成功/失败内容-->
+        <div class="orderFinish">
+            <div class="home-layout clearfix">
+                <div class="finishMain">
+                    <!--成功-->
+                    <div class="sucText sucText2">
+                        <img src="./images/SelectModels/smile.png" alt="" class="smile"/>
+                        <h1>恭喜您订单完成，预祝您出行愉快！</h1>
+                        <h2>订单编号：<span>394828438482798</span></h2>
+                        <h4>我们将在最迟15天内送达您的手中，将耐心等待。</h4>
+                        <h3>页面<b>30秒</b>后会自动跳转<a href="javascript:void(0);"><b>订单详情</b></a>哦～</h3>
+                        <p class="other">您可以：<a href="javascript:;">我的订单</a><a href="javascript:;">常见问题</a></p>
+                    </div>
+                    <!--失败-->
+                   <!-- <div class="sucText sucText2">
+                        <img src="./images/SelectModels/warn.png" alt="" class="smile"/>
+                        <h1>抱歉，您支付失败</h1>
+                        <h2>订单编号：<span>394828438482798</span></h2>
+                        <h3><input type="button" value="返回重新支付"/></h3>
+                        <p class="other">您可以：<a href="javascript:;">我的订单</a><a href="javascript:;">常见问题</a></p>
+                    </div>-->
+                    <!--成功-失败-end-->
+                    <div class="sucFocus">
+                        <img src="images/weixin.jpg"/>
+                        <p>扫描二维码随时随<br/>地关注您订单信息</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,5 +141,6 @@
             www.quanqiuzuche.com 北京信诺汽车租赁有限责任公司 京ICP备16012380号-1
         </div>
     </div>
+
 </body>
 </html>

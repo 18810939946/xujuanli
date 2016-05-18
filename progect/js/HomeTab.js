@@ -6,6 +6,12 @@ $(function(){
 //租车问答收缩
     $(".Rental-left dd").hide().first().show();
     $(".Rental-left dt").click(function(){
+        if($(this).next().is(":visible")){
+            $(this).removeClass("dtHigh");
+        }
+        else{
+            $(this).addClass("dtHigh");
+        }
         $(this).next().slideToggle(100);
     });
     /*首页选择城市-显示隐藏*/
@@ -30,46 +36,48 @@ $(function(){
         $('body,html').animate({ scrollTop: 0 }, speed);
         return false;
     });
+    /*我的订单-tab*/
+    var timer=null;
+    $(".ManyInfo>.InfoNav>dd").eq(0).addClass("InfoNavhigh");
+    $(".ManyInfo>.InfoNav>dd").on("click",function(){
+        if(timer){
+            clearTimeout(timer);
+            timer=null;
+        }
+        var _this=$(this);
+        timer=setTimeout(function(){
+            var i=_this.index();
+            _this.addClass("InfoNavhigh").siblings().removeClass("InfoNavhigh");
+            $(".InfoTwo").stop().animate({"left":(-i*1074)},2);
+        },1);
+    });
+    /*我的订单左侧菜单栏颜色变换*/
+    $(".orderMenu dl a").click(function(){
+        $(this).addClass("fontHigh").parents("dl").siblings().find("a").removeClass("fontHigh");
+        $(this).parent("dd").siblings().find("a").removeClass("fontHigh");
+    });
 
+    /*选择车型页-筛选框点击收回*/
+    $(".screening .result-btn").click(function(){
+        if($(".screening form").is(":visible")){
+            $(".screening form").hide();
+            $(".ManyCar .mainShow").hide();
+        }else{
+            $(".screening form").show();
+            $(".ManyCar .mainShow").show();
+        }
+    });
 });
-/*tab插件*/
-
-$(function(){
-    var tabs=function(){
-        function tag(name,elem){
-            return (elem||document).getElementsByTagName(name);
+/*判断多选框是否选中*/
+$(document).ready(function(){
+    var $cr = $("#cr");
+    $cr.click(function(){
+        if($cr.is(":checked")){
+            $(".Multi").show();
+        }else{
+             $(".Multi").hide();
         }
-        //获得相应ID的元素
-        function id(name){
-            return document.getElementById(name);
-        }
-
-        return {
-            set:function(elemId,tabId){
-                var elem=tag("li",id(elemId));
-                var tabs=tag("div",id(tabId));
-                var listNum=elem.length;
-                var tabNum=tabs.length;
-                for(var i=0;i<listNum;i++){
-                    elem[i].onclick=(function(i){
-                        return function(){
-                            for(var j=0;j<tabNum;j++){
-                                if(i==j){
-                                    tabs[j].style.display="block";
-                                    elem[j].className="selected";
-                                }
-                                else{
-                                    tabs[j].style.display="none";
-                                    elem[j].className="";
-                                }
-                            }
-                        }
-                    })(i)
-                }
-            }
-        }
-    }();
-    tabs.set("payNav","payCon");//执行
+    })
 });
 
 
