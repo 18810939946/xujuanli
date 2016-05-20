@@ -71,22 +71,29 @@
                 <form action="">
                     <div class="fillBox">
                         <h1>联系人<span>(必填)</span></h1>
-                        <p><label>姓名：</label><input type="text" class="wd-one" id="xingMing"/><b class="error"></b></p>
+                        <p><label>姓名：</label><input type="text" maxlength="14" class="wd-one" id="xingMing"/><b class="error"></b></p>
                         <p>
                             <label>手机：</label>
-                            <input type="tel" placeholder="用于接收订单确认信息" class="wd-two" id="MyTel" onblur="javascript:checkTel($(this).val())"/>
+                            <input type="tel" placeholder="用于接收订单确认信息" class="wd-two" id="MyTel" maxlength="11" onblur="javascript:checkTel($(this).val())"/>
                             <b class="error"></b></p>
                         <p>
                             <label>邮箱：</label>
-                            <input type="email" placeholder="用于接收订单确认邮箱" class="wd-two" id="MyEmail" onblur="javascript:checkEmail($(this).val())"/>
+                            <input type="email" placeholder="用于接收订单确认邮箱" maxlength="28" class="wd-two" id="MyEmail" onblur="javascript:checkEmail($(this).val())"/>
                             <b class="error"></b>
                         </p>
                     </div>
                     <div class="fillBox">
                         <h1>驾驶员<span>(必填)</span></h1>
                         <p>
-                            <label>姓名：</label>
-                            <input type="text" placeholder="中文字符" class="wd-one" id="MyName" onblur="javascript:checkName($(this).val())"/>
+                            <label>称谓：</label>
+                             <span class="fillSex">
+                                <select>
+                                    <option value="0" selected="selected">男士</option>
+                                    <option value="0" selected="selected">女士</option>
+                                </select>
+                            </span>
+                            <label style="width: 55px;margin-right: 0;">姓名：</label>
+                            <input type="text" placeholder="中文字符" class="wd-one" style="width:80px;" id="MyName" onblur="javascript:checkName($(this).val())"/>
                             <b class="error"></b></p>
                         <p>
                             <label>护照拼音：</label>
@@ -104,12 +111,12 @@
                         </p>
                         <p>
                             <label>手机：</label>
-                            <input type="text" placeholder="用于你接收订单确认短信" class="wd-two" id="MyTel2" onblur="javascript:checkTel2($(this).val())"/>
+                            <input type="text" placeholder="用于你接收订单确认短信" maxlength="11" class="wd-two" id="MyTel2" onblur="javascript:checkTel2($(this).val())"/>
                             <b class="error"></b>
                         </p>
                         <p>
                             <label>邮箱：</label>
-                            <input type="text" placeholder="用于你接收订单确认邮件" class="wd-two" id="MyEmail2" onblur="javascript:checkEmail2($(this).val())"/>
+                            <input type="text" placeholder="用于你接收订单确认邮件" maxlength="28" class="wd-two" id="MyEmail2" onblur="javascript:checkEmail2($(this).val())"/>
                             <b class="error"></b>
                         </p>
                         <p class="gender">
@@ -139,7 +146,7 @@
                     <div class="fillBox">
                         <h2>在线支付订单总金额：<span>¥99，99</span></h2>
                         <div class="fillBtn">
-                            <input type="submit" value="确认订单并支付"/>
+                            <a href="OnlinePay.html"><input type="submit" value="确认订单并支付"/></a>
                         </div>
                         <p class="agree"><input type="checkbox" class="wd-four" checked/><i>我已阅读并同意<a href="javascript:;">订单条款</a></i></p>
                     </div>

@@ -46,5 +46,5 @@ function SetPara() {
     var b = $("#Price").val();
     var c = $("#Size").val();
     var d = $("#Number").val();
-    alert("1.aspx?a=" + a + "&b=" + b + "&c=" + c + "&d=" + d);
+    //alert("1.aspx?a=" + a + "&b=" + b + "&c=" + c + "&d=" + d);
 }

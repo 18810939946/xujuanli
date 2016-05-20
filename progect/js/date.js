@@ -1,4 +1,4 @@
-
+﻿
 $(function (){
     $(".jcDate").jcDate({
         IcoClass : "jcDateIco",
@@ -290,7 +290,7 @@ $(function (){
 			function closeDate(){
 				$("input.dateVisited").removeClass("dateVisited");
 				$jcDate.hide(options.Speed);
-			};
+			}
 		});
-	};/* 代码整理：懒人之家 www.lanrenzhijia.com */
-})(jQuery)
+	};
+})(jQuery);

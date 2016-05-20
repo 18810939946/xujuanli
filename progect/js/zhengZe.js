@@ -1,10 +1,10 @@
 $(function(){
     //验证姓名
     $("#xingMing").keyup(function(){
-        if($(this).val().length<20){
+        if($(this).val().length<14){
             $(this).next(".error").text("")
         } else{
-            $(this).next(".error").text("字符长度应小于20个")
+            $(this).next(".error").text("字符长度应小于等于14个")
         }
     });
 });

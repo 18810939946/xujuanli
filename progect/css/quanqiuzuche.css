@@ -61,9 +61,9 @@ legend { border: 0; padding: 0; }
 textarea { overflow: auto; resize: vertical; }
 optgroup { font-weight: bold; }
 table { border-collapse: collapse; border-spacing: 0; }
-td,th { padding: 0;font-size: 12px; }
+td,th{ padding: 0;font-size: 12px; }
 * { box-sizing: border-box;}
-li{font-size:12px; }
+li,dt,dd{font-size:12px;}
 a, img { -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */ }
 html, body { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 html { font-size: 12px; }
@@ -718,14 +718,14 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #b
     color: #fff;
     position: relative;}
 .home-footer .topImg{
+    display: none;
     right: 5px;
-    top: -97px;
-    position: absolute;
-    cursor: pointer;}
-.home-footer .topImg2{
+    cursor: pointer;
     position: fixed;
-    top: inherit;
-    bottom: 5px}
+    box-shadow: 0px 0 2px rgba(255, 255, 255, 1);
+    bottom: 5px;}
+.home-footer .topImg2{
+    }
 .home-footer .foot-top{ height: 351px;}
 .home-footer .foot-top dl{
     float: left;
@@ -735,6 +735,9 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #b
     height: 32px;
     line-height: 32px;
     margin-bottom: 15px;}
+.home-footer .foot-top dl dd a,.home-footer .foot-top dl dd a:hover{
+    color: #fff;
+    font-size: 12px;}
 .home-footer .foot-top dl dd{
     font-size: 12px;
     line-height: 32px;}
@@ -780,7 +783,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #b
     padding: 0 25px;
     line-height: 76px;
     font-size: 70px;
-    color: #3e678d;
+    color: #0E3354;
     text-align: center;}
 .home-footer .footSay p span{
     line-height: 52px;
@@ -792,11 +795,10 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #b
     content: "";
     height: 170px;
     width: 1px;
-    background: #3d698d;
+    background: #13395b;
     position: absolute;
     right: 0;
-    top: 13px;
-}
+    top: 13px;}
 
 
 /*租车问答*/
@@ -874,7 +876,7 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #b
 
 /*我的订单-选择车型*/
 .selectCar{
-    background: #f8f8f8;}
+    background: #faf7f7;}
 .selNav{
     height: 67px;
     background: #d3e6f7;
@@ -911,6 +913,10 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #b
     height: 36px;
     margin-top: 28px;
     position: relative;}
+.selCity-left .select_box{
+     background:#fff url(../images/SelectModels/downsel.png)  no-repeat ;
+    background-position: 94% 13px;
+}
 .selCity-left p{
     font-size: 14px;
     color: #000;
@@ -922,16 +928,6 @@ input::-webkit-input-placeholder,textarea::-webkit-input-placeholder { color: #b
 .selCity .car-also{
     margin-top: 24px;
     position: relative;}
-.selCity .downsel{
-    width: 22px;
-    height: 12px;
-    display: block;
-    position: absolute;
-    top: 14px;
-    background: url(../images/SelectModels/downsel.png) no-repeat;}
-.selCity .downsel-one{left: 375px;}
-.selCity .downsel-two{left: 822px;}
-.selCity .downsel-three{left: 959px;}
 .selCity-right{
     width: 118px;
     float: right;
@@ -1021,10 +1017,11 @@ select{
     font-size: 14px;
     color: #000;}
 .screening{
+    position: relative;
     background: #f0f4f8;
     width: 1200px;
     color: #000;
-    margin: 0 auto 25px auto;}
+    margin: 0 auto;}
 .screening form{
     padding: 0 50px;}
 .screening table td b{
@@ -1056,28 +1053,52 @@ select{
 .screening .result p b{
     font-size: 14px;}
 .screening .result-btn{
-    width: 75px; height: 21px;
+    padding: 0 27px 0 20px;
+    background: #0a1f32 url(../images/SelectModels/downScreen.png) no-repeat 53px center;
+    -webkit-transition: all linear .1s;
+    transition: all linear .1s;
+    height: 21px;
     line-height: 21px;
     color: #fff;
-    background: #0a1f32;
     float: right;
     margin-right: 2px;
     border: none;
     outline: none;
     font-size: 14px;
     margin-top: 12px;}
+.screening .result-btn:hover{
+    background: #0a1f32 url(../images/SelectModels/downScreen.png) no-repeat 50px center;}
+.screening .result-btnHigh{
+    background: #0a1f32 url(../images/SelectModels/downScreen2.png) no-repeat 53px center!important;}
 .CarDetail{
-    width: 1200px;
-    padding: 0 33px;
-    background: #f0f4f8;
-    margin: 0 auto;
+    background: #fff;
+    margin: 20px auto 0 auto;
     clear: both;
-    height: 250px;
+    height: 210px;
     position: relative;
     top: -1px;}
+/*汽车变小之后*/
+.CarDetail2 {
+   /* display: none;*/
+    width: 100%;
+    height: 90px!important;}
+.CarDetail2 .CarDetail-left img{
+    margin-top: 12px!important;
+    height: 70px!important;}
+.CarDetail2 .CarDetail-right-top {
+    font-size: 18px!important;
+     line-height: 24px!important;
+     margin: 22px 0 0 0!important;}
+.CarDetail2 .CarDetail-right-down{
+    padding: 0!important;
+    font-size: 12px!important;}
+/*汽车变小之后-end*/
+
+.CarDetail .home-layout{
+    padding: 0 33px;}
 .CarDetail .CarDetail-left img{
-    margin-top: 11px;
-    height: 239px; }
+    margin-top: 32px;
+    height: 150px;}
 .CarDetail .CarDetail-right{
     color: #000;
     margin-left: 40px;}
@@ -1101,8 +1122,8 @@ select{
 .CarDetail .CarDetail-right dl dt{
     float: left;}
 .CarDetail .CarDetail-right dl dt img{
-    margin: 0 6px 0 8px;
-    width: 21px;}
+    margin: -2px 6px 0 8px;
+    width: 17px;}
 .CarDetail .CarDetail-right dl dd{
     float: right;
     color: #fff;
@@ -1117,50 +1138,55 @@ select{
     clear: both;}
 .selContent{
     width: 1200px;
-    margin: 28px auto 0 auto;
-    background: #fff;}
+    margin: 0 auto;}
 .contentBox{
     clear: both;
-    background: #fff;
-    margin-bottom: 22px; color: #000;}
+    margin-bottom: 4px; color: #000;
+    height: auto;
+    position: relative;
+    min-height: 236px;height:236px\9;overflow:hidden\9;}
 .contentBox:first-child .contentBox-right{
     border-top: none;}
 .contentBox-left{
     width: 360px;
     background: #d2e6f7;
     padding: 0 9px;
-    margin-bottom: 22px;}
+    margin-bottom: 4px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;}
 .contentBox-left h1{
     position: relative;
     font-size: 18px;
     height: 30px;
     line-height: 30px;
-    margin: 7px 0 21px 0;}
+    margin: 10px 0 16px 0;}
 .contentBox-left h1 img{
-    margin: 0 10px 0 0;
+    margin: 0 15px 0 27px;
     width: 83px;}
 .contentBox-left h1 span{
     font-size: 18px;
     position: relative;
-    top: 7px;}
+    top: 5px;}
 .contentBox-left h1 b{
     color: #f80000;
     font-size: 38px;
     position: absolute;
     right: 7px;
-    top: 11px;}
+    top: 50px;}
 .contentBox-left h2{
     font-size: 18px;
-    text-align: center;}
+    margin-left: 32px;}
 .contentBox-left h2 img{
     margin: 0 3px 0 3px;}
 .contentBox-left .conditions{
     margin: 5px 0 30px 36px;}
 .contentBox-left .conditions p{
-    line-height: 32px;
+    line-height: 26px;
     font-size: 12px;}
 .contentBox-left .conditions p img{
-    width: 21px;
+    width: 16px;
     margin-right: 11px;
 }
 .contentBox-left .conditions p a{
@@ -1169,19 +1195,23 @@ select{
 .contentBox-left .conditions p a:hover{ color: #000}
 
 .contentBox-right{
+    padding-bottom: 8px;
+    padding-top: 9px;
+    float: none!important;
+    margin-left: 360px;
     width: 840px;}
 .contentBox-right .tao_Can:hover{
-    background: #e8ecf0;}
+    background: #d2e6f7;}
 .contentBox-right .tao_Can{
     background: #f4f7f7;
     clear: both;
-    height: 139px;
+    height: 108px;
     padding-left:47px;
-    padding-top: 13px;}
+    padding-top: 5px;}
 .taoCan-bottom{
-    margin-top: 2px;}
+    margin-top:3px;}
 .contentBox-right h1{
-    font-size: 18px;
+    font-size: 16px;
     height: 30px;
     line-height: 30px;}
 .contentBox-right h1 span{
@@ -1189,11 +1219,10 @@ select{
 .contentBox-right h1 img{
     width: 85px;}
 .contentBox-right .taoCan-BaoXian{
-    margin-top: 9px;
     float: left;}
 .contentBox-right .taoCan-BaoXian p{
-    font-size: 14px;
-    line-height: 26px;}
+    font-size: 13px;
+    line-height: 22px;}
 .contentBox-right .taoCan-BaoXian p img{
     margin: 0 18px 0 12px;
     width: 12px;}
@@ -1201,7 +1230,7 @@ select{
     height: 62px;
     float: right;}
 .tao_Can .taoCan-price{
-    margin-top: 5px;}
+    margin-top: -5px;}
 .contentBox-right .taoCan-price-num{
     float: left;
     height: 62px;
@@ -1240,7 +1269,7 @@ select{
     padding-top: 30px;
     padding-bottom: 120px;}
 .vehicleDetails{
-    background: #f0f4f8;
+    background: #fff;
     width: 1200px;
     margin: 0 auto;
     padding: 30px 1px 72px 1px;}
@@ -1273,12 +1302,12 @@ select{
 .vehicleDetails .velMain .velMain-right dl dt{
     float: left;}
 .vehicleDetails .velMain .velMain-right dl dt img{
-    margin: 0 6px 0 8px;
-    width: 21px;}
+    margin: -2px 6px 0 8px;
+    width: 17px;}
 .vehicleDetails .velMain .velMain-right dl dd{
     float: right;
     color: #fff;
-    line-height: 40px;
+    line-height: 38px;
     font-size: 12px;}
 .vehicleDetails .velMain .velMain-right-down{
     font-size: 14px;
@@ -1300,7 +1329,7 @@ select{
     height: 39px;
     line-height: 39px;
     padding-left: 31px;
-    background: #b8defe;
+    background: #d3e6f7;
     color: #000;
     font-size: 18px;
 }
@@ -1339,9 +1368,10 @@ select{
     height: 42px;
     margin-bottom: 12px;}
 .vehicleDetails .ver-href a{
+    display: none;
     font-size: 12px;
     line-height: 42px;
-    display: block;
+   /* display: block;*/
     float: left;
     text-decoration: underline;
     text-align: center;
@@ -1433,15 +1463,21 @@ select{
     padding-bottom: 180px;}
 .FillOrder .fillContent .jiaZhao-photo{
     position: absolute;
-    width: 251px;
-    top: 320px;
-    right: 385px;}
+    width: 472px;
+    top: 216px;
+    right: 172px;}
 .FillOrder .fillBox .error{
     color: red;
     float: left;
     line-height: 30px;
     margin-left: 10px;}
+.FillOrder .fillBox .optional {
+    color: #ff0000;
+    font-size: 12px;
+    position: relative;
+    left: 105px;}
 .FillOrder .fillBox h1{
+    font-weight: bold;
     height: 40px;
     width: 145px;
     line-height: 40px;
@@ -1450,6 +1486,7 @@ select{
     font-size: 16px;
     margin-bottom: 18px;}
 .FillOrder .fillBox h1 span{
+    font-weight: normal;
     color: #ff0000;
     font-size: 14px;}
 .FillOrder .fillBox p{
@@ -1479,28 +1516,50 @@ select{
     float: left;}
 .FillOrder .fillBox .fillType .select_box{
     font-size: 12px;
-    background: url(../images/SelectModels/downfill.png) no-repeat 182px 11px;
-}
+    background: url(../images/SelectModels/downfill.png) no-repeat 182px 11px;}
 .FillOrder .fillBox .fillType .select_option{
     width: 203px;
     border: 1px solid #cdcdcd;
-    margin-top: -1px;
-}
+    margin-top: -1px;}
 .FillOrder .fillBox .fillType .select_showbox{
     border: 1px solid #cdcdcd;
     padding: 0 5px;
     height: 30px;
     line-height: 30px;
-    color: #b7b7b7}
-.FillOrder .fillBox .wd-one{ width: 203px;}
-.FillOrder .fillBox .wd-two{ width: 203px;}
-.FillOrder .fillBox .wd-three{ width: 98px; margin-right: 6px;}
-.FillOrder .fillBox .birthday{ background: url(../images/birthday.png) no-repeat 175px 3px;}
+    color: #b7b7b7;
+    font-size: 12px;}
+.fillSex{
+    width: 67px;
+    display: block;
+    float: left;}
+.fillSex .select_box{
+    font-size: 12px;
+    background: url(../images/SelectModels/downfill.png) no-repeat 47px 11px;}
+.fillSex .select_option{
+    width: 67px;
+    border: 1px solid #cdcdcd;
+    margin-top: -1px;}
+.fillSex .select_showbox{
+    border: 1px solid #cdcdcd;
+    padding: 0 5px;
+    height: 30px;
+    line-height: 30px;
+    color: #b7b7b7;
+    font-size: 12px;}
+
+.FillOrder .fillBox .wd-one,.FillOrder .fillBox .wd-two{
+    width: 203px;}
+.FillOrder .fillBox .wd-three{
+    width: 98px;
+    margin-right: 6px;}
+.FillOrder .fillBox .birthday{
+    background: url(../images/birthday.png) no-repeat 175px 3px;}
 .FillOrder .fillBox .wd-four{
     position: relative;
     top: 8px;
     margin-right: 8px;}
 .FillOrder .fillBox i{
+    font-size: 12px;
     font-style: normal;
     float: left;
     margin-top: 5px;}
@@ -1513,24 +1572,29 @@ select{
     margin-right: 35px;
     float: left;}
 .FillOrder .fillBox .warn{
-    margin-left: 135px;
+    margin-left: 191px;
     color: #000;
+    font-size: 12px;
     margin-top: 14px;}
 .FillOrder .fillBox h2{
-    margin: 55px 0 28px 135px;
+    margin: 55px 0 28px 191px;
     line-height: 30px;
     font-size: 18px;
     color: #000;}
 .FillOrder .fillBox h2 span{
     font-size: 18px;
     color: #cd0002;}
+.FillOrder .fillBox .fillBtn a{
+    display: inline-block;
+    width: 184px;
+    margin-left: 192px;
+    height: 39px;}
 .FillOrder .fillBox .fillBtn input{
     font-size: 18px;
     border:none;
     outline: none;
     width: 184px;
     height: 39px;
-    margin-left: 175px;
     background: #ecb816;
     border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -1539,7 +1603,7 @@ select{
     background: #fac516;}
 .FillOrder .fillBox .agree{
     color: #000;
-    margin-left: 180px;
+    margin-left: 193px;
     padding-top: 15px;}
 .FillOrder .fillBox .agree a{
     color: #4a4af6;
@@ -1558,43 +1622,329 @@ select{
     line-height: 14px;}
 .FillOrder .Multi b{color: red;}
 /*jc-date日期选择*/
-.jcDateIco { background:#fff; }
-input.jcDate { cursor:pointer; }
-#jcDate { background:#fefefe; width:203px; padding:10px 18px; height:208px; position:absolute; z-index:1000;
-    border:1px solid #2fa7e7; color:#333; display:none; font-size:0; overflow:hidden; }
-#jcDateTt { height:15px; line-height:15px; position:relative; margin-bottom:10px; }
-#jcDateTt a { color:#333; display:block; position:absolute; top:0; width:15px; height:15px; cursor:pointer; }
-#jcDateTt a#d_prev { background: url(../images/SelectModels/birth_lt.png)no-repeat center 3px; left:0; }
-#jcDateTt a#d_next {background: url(../images/SelectModels/birth_rt.png) no-repeat center 3px;right:0; }
-#jcDateTt a#d_prev:hover { background-position:center -11px; background-color:#2b84b5; }
-#jcDateTt a#d_next:hover { background-position:center -11px; background-color:#2b84b5; }
-#jcDateTt div { position:absolute; top:0; left:15px; right:15px; bottom:0; color:#333; font-size:12px; font-weight:bold; text-align:center; }
-#jcDateTt div samp,#jcDateTt div span { margin:0 5px; color:#333; font-size:12px; font-weight:bold; cursor:pointer; }
-#jcDateTt div samp:hover,#jcDateTt div span:hover,#jcDateTt div samp.visited,#jcDateTt div span.visited { color:#2b84b5; }
-#jcDateMax { width:1935px; height:124px; position:relative; left:-687px; top:0;}
-#jcDateMax ul { width:161px; font-size:0; float:left; height:124px; display:inline-black; }
-#jcDayWrap { overflow:hidden; }
-#jcYeas,#jcMonth { display:none; overflow-x:hidden; padding-left:2px; margin-bottom:10px;height: 160px; }
-#jcYeas dt,#jcYeas dd { font-weight:bold; width:53px; height:30px; float:left; text-align:center; line-height:30px; cursor:pointer; }
-#jcYeas dt:hover,#jcYeas dd:hover,#jcMonth dt:hover,#jcMonth dd:hover { background:#5aaad8; color:#fff; }
-#jcYeas dt.visited,#jcYeas dd.visited,#jcMonth dt.visited,#jcMonth dd.visited { background:#2b84b5; color:#fff; }
-#jcMonth dt { font-weight:bold; width:53px; height:25px; float:left; text-align:center; line-height:25px; cursor:pointer; margin:10px 0; }
-#jcDayWrap ul li,
-#jcDayCon dt { float:left; width:23px; line-height:20px; text-align:center; display:inline; }
-#jcDayWrap ul li { color:#bbb; cursor:pointer; }
-#jcDayCon dt { color:#2b84b5; font-size:13px; }
-#jcDayWrap ul li.jcDateColor { color:#555; }
-#jcDayWrap ul li.visited { background:#2b84b5; color:#fff; }
-#jcDayWrap ul li:hover { background:#5aaad8; color:#fff; }
-#jcDateMax { clear:both; }
-#jcDateBtn { clear:both; line-height:19px;height: 25px;padding-top:2px; overflow:hidden; }
-#jcTimeWrap { float:right; width:54px; border:1px solid #999; border-left:1px solid #555; border-top:1px solid #555; height:17px; overflow:hidden; display:none; }
-#jcDateBtn label { width:6px; line-height:18px; height:17px; display:block; float:left; text-align:center; color:#333; }
-#jcDateBtn input { line-height:17px; height:17px; text-align:center; float:left; width:24px; border:0; }
-#jcDateBtn samp,#jcDateBtn span { float:left; margin-right:10px; cursor:pointer; }
-#jcDateBtn samp:hover,#jcDateBtn span:hover { color:#d52222; }
-#jcDateBtn a#d_sub { width:37px; float:right; display:block; line-height:18px; height:17px; text-align:right; cursor:pointer; }
-#jcDateBtn a#d_sub:hover { text-decoration:none; color:#d52222; font-weight:bold; }
+.jcDateIco {
+    background:#fff; }
+input.jcDate {
+    cursor:pointer; }
+#jcDate {
+    background:#fefefe;
+    width:203px;
+    padding:10px 18px;
+    height:208px;
+    position:absolute;
+    z-index:1000;
+    border:1px solid #2fa7e7;
+    color:#333;
+    display:none;
+    font-size:0;
+    overflow:hidden; }
+#jcDateTt {
+    height:15px;
+    line-height:15px;
+    position:relative;
+    margin-bottom:10px; }
+#jcDateTt a {
+    color:#333;
+    display:block;
+    position:absolute;
+    top:0; width:15px;
+    height:15px;
+    cursor:pointer; }
+#jcDateTt a#d_prev {
+    background: url(../images/SelectModels/birth_lt.png)no-repeat center 3px; left:0; }
+#jcDateTt a#d_next {
+    background: url(../images/SelectModels/birth_rt.png) no-repeat center 3px;right:0; }
+#jcDateTt a#d_prev:hover {
+    background-position:center -11px;
+    background-color:#2b84b5; }
+#jcDateTt a#d_next:hover {
+    background-position:center -11px;
+    background-color:#2b84b5; }
+#jcDateTt div {
+    position:absolute;
+    top:0; left:15px; right:15px; bottom:0;
+    color:#333;
+    font-size:12px;
+    font-weight:bold;
+    text-align:center; }
+#jcDateTt div samp,#jcDateTt div span {
+    margin:0 5px;
+    color:#333;
+    font-size:12px;
+    font-weight:bold;
+    cursor:pointer; }
+#jcDateTt div samp:hover,#jcDateTt div span:hover,#jcDateTt div samp.visited,#jcDateTt div span.visited {
+    color:#2b84b5; }
+#jcDateMax {
+    width:1935px;
+    height:124px;
+    position:relative;
+    left:-687px;
+    top:0;}
+#jcDateMax ul {
+    width:161px;
+    font-size:0;
+    float:left;
+    height:124px;
+    display: inline-block; }
+#jcDayWrap {
+    overflow:hidden; }
+#jcYeas,#jcMonth {
+    display:none;
+    overflow-x:hidden;
+    padding-left:2px;
+    margin-bottom:10px;
+    height: 160px; }
+#jcYeas dt,#jcYeas dd {
+    font-weight:bold;
+    width:53px;
+    height:30px;
+    float:left;
+    text-align:center;
+    line-height:30px;
+    cursor:pointer; }
+#jcYeas dt:hover,#jcYeas dd:hover,#jcMonth dt:hover,#jcMonth dd:hover {
+    background:#5aaad8;
+    color:#fff; }
+#jcYeas dt.visited,#jcYeas dd.visited,#jcMonth dt.visited,#jcMonth dd.visited {
+    background:#2b84b5;
+    color:#fff; }
+#jcMonth dt {
+    font-weight:bold;
+    width:53px; height:25px;
+    float:left;
+    text-align:center;
+    line-height:25px;
+    cursor:pointer;
+    margin:10px 0; }
+#jcDayWrap ul li,#jcDayCon dt {
+    float:left;
+    width:23px;
+    line-height:20px;
+    text-align:center;
+    display:inline; }
+#jcDayWrap ul li {
+    color:#bbb;
+    cursor:pointer; }
+#jcDayCon dt {
+    color:#2b84b5;
+    font-size:13px; }
+#jcDayWrap ul li.jcDateColor {
+    color:#555; }
+#jcDayWrap ul li.visited {
+    background:#2b84b5;
+    color:#fff; }
+#jcDayWrap ul li:hover {
+    background:#5aaad8;
+    color:#fff; }
+#jcDateMax {
+    clear:both; }
+#jcDateBtn {
+    clear:both;
+    line-height:19px;
+    height: 25px;
+    padding-top:2px;
+    overflow:hidden; }
+#jcTimeWrap {
+    float:right;
+    width:54px;
+    border:1px solid #999;
+    border-left:1px solid #555;
+    border-top:1px solid #555;
+    height:17px;
+    overflow:hidden;
+    display:none; }
+#jcDateBtn label {
+    width:6px;
+    line-height:18px;
+    height:17px;
+    display:block;
+    float:left;
+    text-align:center;
+    color:#333; }
+#jcDateBtn input {
+    line-height:17px;
+    height:17px;
+    text-align:center;
+    float:left;
+    width:24px;
+    border:0; }
+#jcDateBtn samp,#jcDateBtn span {
+    float:left;
+    margin-right:10px;
+    cursor:pointer; }
+#jcDateBtn samp:hover,#jcDateBtn span:hover {
+    color:#d52222; }
+#jcDateBtn a#d_sub {
+    width:37px;
+    float:right;
+    display:block;
+    line-height:18px;
+    height:17px;
+    text-align:right;
+    cursor:pointer; }
+#jcDateBtn a#d_sub:hover {
+    text-decoration:none;
+    color:#d52222;
+    font-weight:bold; }
+/*国际驾照-详情页*/
+.driveLicense .LicenseBanner{
+    height: 450px;
+    background: url(../images/License.jpg) no-repeat; }
+.driveLicense .nerBtn{
+    height: 41px;
+    width: 335px;
+    margin-left: 285px;
+    padding-top: 332px;}
+.driveLicense .nerBtn input{
+    float: left;
+    margin-left: 10px;
+    width: 157px;
+    height: 41px;
+    background: #ebb816;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    color: #000;}
+.driveLicense .LicenseMain{
+    overflow: hidden;
+    width: 1000px;
+    margin: 49px auto 135px auto;}
+.driveLicense .LicenseMain .main02{
+    margin-top: 20px;}
+.driveLicense .LicenseMain .main03{
+    margin-top: 35px;}
+.driveLicense .LicenseMain h1{
+    padding-right: 45px;
+    display: inline-block;
+    border-bottom: 1px solid #a0a0a0;
+    line-height: 45px;
+    color: #000;}
+.driveLicense .LicenseMain h1 span{
+    position: relative;
+    top: 3px;
+    padding: 0 1px;
+    display: inline-block;
+    border-bottom: 3px solid #373b58;
+    font-size: 24px;}
+.driveLicense .LicenseMain h1 b{
+    position: relative;
+    top: 3px;
+    margin-left: 15px;
+    font-size: 14px;}
+.LicenseMain .ask h2{
+    font-size: 18px;
+    color: #000;}
+.LicenseMain .ask p{
+    font-size: 15px;
+    color: #879fc4;
+    line-height: 26px;}
+.LicenseMain .ask01{
+    height: 290px;
+    margin-top: 30px;}
+.LicenseMain .ask01-left{
+    float: left;}
+.LicenseMain .ask01-right{
+    margin:18px 6px 0 0;
+    float: right;}
+.LicenseMain .ask01 h2{
+    margin-top: 76px;
+    line-height: 42px;
+    margin-left: 60px;}
+.LicenseMain .ask01 p{
+    margin: 32px 0 0 60px;
+    text-align: center;
+    width: 558px;}
+.LicenseMain .ask02{
+    margin-top: 5px;
+    height: 325px;}
+.LicenseMain .ask02-left{
+    margin: 42px 0 0 15px;
+    float: left;}
+.LicenseMain .ask02-right{
+    margin:18px 6px 0 0;
+    float: right;}
+.LicenseMain .ask02 h2{
+    text-align: right;
+    margin: 92px 50px 0 0;
+    line-height: 42px;}
+.LicenseMain .ask02 p{
+    margin: 42px 50px 0 0;
+    text-align: left;
+    text-indent:38px;
+    width: 545px;}
+.LicenseMain .use{
+    height: 406px;
+    margin-top: 53px;
+    background: #5d83b2;}
+.LicenseMain .use-left{
+    padding-top: 62px;
+    width: 467px;
+    float: left;
+    text-align: right;
+    line-height: 36px;}
+.LicenseMain .use-left h3{
+    font-size: 16px;
+    margin: 30px 46px 0 0;}
+.LicenseMain .use-left p{
+    margin-right: 46px;
+    font-size: 16px;
+    color: #fff;}
+.LicenseMain .use-right{
+    width: 533px;
+    float: right;}
+.LicenseMain .use-right img{
+    width: 100%;}
+.LicenseMain .process{
+    height: 300px;}
+.LicenseMain .process .proNum{
+    float: left;}
+.LicenseMain .process .proNum01 dt{
+    background: url(../images/proNum01.png) no-repeat;}
+.LicenseMain .process .proNum02 dt{
+    background: url(../images/proNum02.png) no-repeat;}
+.LicenseMain .process .proNum03 dt{
+    background: url(../images/proNum03.png) no-repeat;}
+.LicenseMain .proNum dl{
+    margin: 67px 110px 0 18px;
+    text-align: center;
+    width: 127px;
+    float: left;
+    position: relative;}
+.LicenseMain .proNum dl:before{
+    content: ">";
+    color: #f2b74f;
+    position: absolute;
+    left: -94px;
+    top: 0;
+    font-size: 88px;}
+.LicenseMain .proNum dt{
+    background: #f2b74f;
+    width: 127px;
+    height: 127px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;}
+.LicenseMain .proNum dd .proTop{
+    line-height: 36px;
+    margin-top: 10px;
+    font-size: 18px;
+    color: #f2b74f;}
+.LicenseMain .proNum dd .proBop{
+    line-height: 28px;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #000;}
+.LicenseMain .service{
+    margin-top: 66px;
+    float: right;
+    text-align: center;
+    color: #000;}
+.LicenseMain .service p{
+    font-size: 12px;
+    line-height: 36px;
+    padding-top: 10px;}
+/*国际驾照详情页-End*/
 
 /*国际驾照-填写订单页*/
 .FillOrder .apply{
@@ -1603,8 +1953,9 @@ input.jcDate { cursor:pointer; }
     line-height: 40px;
     margin-left: 45px;}
 .FillOrder .applyTime{
-    line-height: 24px;
-    margin: 4px 0 10px 0;
+    visibility: hidden;
+   /* line-height: 24px;*/
+   /* margin: 4px 0 10px 0;*/
     color: red;
     font-size: 12px;
     margin-left: 46px;}
@@ -1620,6 +1971,8 @@ input.jcDate { cursor:pointer; }
 .FillOrder .fillContent .fee{
     margin-top: -8px;
     margin-left: 190px;}
+.FillOrder .fillContent .fee2{
+    margin-bottom: 50px;}
 .FillOrder .fillContent .fee span{
     line-height: 18px;
     display: block;
@@ -1639,6 +1992,11 @@ input.jcDate { cursor:pointer; }
 .OnlinePay{
     padding-top: 30px;
     background: #f8f8f8;}
+.nowNews{
+    font-size: 12px;
+    color: #ff0000;
+    height: 30px;
+    line-height: 30px;}
 .OnlinePay .paySuccess{
     width: 100%;
     height:188px;
@@ -1670,7 +2028,7 @@ input.jcDate { cursor:pointer; }
     color: #ff0000;}
 .OnlinePay .payType{
     background: #f0f4f8;
-    margin: 30px 0 96px 0;
+    margin: 8px 0 96px 0;
     padding-bottom: 29px;}
 .OnlinePay .payType h1{
     height: 71px;
@@ -1741,9 +2099,10 @@ input.jcDate { cursor:pointer; }
     left: 0;
     top: -2px;}
 .OnlinePay .payCon .weiXin{
+    height: 235px;
     margin: 63px 0 0 50px;}
 .OnlinePay .payCon .weiXin-left{
-    width: 130px;
+    width: 90px;
     display:block;
     float: left;
     margin-bottom: 100px;}
@@ -1753,15 +2112,14 @@ input.jcDate { cursor:pointer; }
     margin-left: 40px;
     color: #000;}
 .OnlinePay .payCon .weiXin-right .weiSao{
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     font-size: 24px;
-    line-height: 36px;
-    margin-top: 5px;}
+    line-height: 27px;}
 .OnlinePay .payCon .weiXin-right .weiSao img{
     margin-right: 12px;}
 .OnlinePay .payCon .weiXin-right .weiInfo{
     font-size: 12px;
-    line-height: 28px;}
+    line-height: 24px;}
 .OnlinePay .payCon .creditCard{
     padding: 29px 0 300px 0;
 }
@@ -1879,6 +2237,7 @@ input.jcDate { cursor:pointer; }
     top: 25px;
     line-height: 32px;}
 .orderFinish .sucText h4{
+    display: none;
     color: #000;
     margin-top: -4px;
     font-size: 16px;}
@@ -1895,14 +2254,16 @@ input.jcDate { cursor:pointer; }
     margin: 38px 40px 0 0;
     display: inline-block;
     position: absolute;
-    right: 0; top: 0;}
+    right: 10px;
+    top: 28px;}
 .orderFinish .sucFocus img{
-    width: 168px;}
+    margin-bottom: 6px;
+    width: 90px;}
 .orderFinish .sucFocus p{
     text-align: center;
     font-size: 12px;
-    color: #2e40a0;
-    line-height: 21px;}
+    color: #000;
+    line-height: 20px;}
 /*国际驾照-支付成功/失败页*/
 .orderFinish .sucText2{
     text-align: center;}
@@ -2053,4 +2414,28 @@ input.jcDate { cursor:pointer; }
 .MyOrders .InfoTwo .carNum-right .howDetail a{
     font-size: 16px;}
 
+/*报错页*/
+.sorryBox{
+    color: #000;
+    width: 960px;
+    height: 400px;
+    margin: 0 auto;}
+.sorryBox h1{
+    font-size: 34px;
+    text-align: center;
+    line-height: 72px;
+    margin-top: 80px;}
+.sorryBox span{
+    color: #ff0000;}
+.sorryBox p{
+    margin-left: 143px;}
+.sorryBox .sorry-one{
+    font-size: 24px;
+    line-height: 50px;}
+.sorryBox .sorry-two{
+    font-size: 20px;
+    line-height: 42px;}
+.sorryBox .sorry-three{
+    font-size: 16px;
+    line-height: 40px;}
 

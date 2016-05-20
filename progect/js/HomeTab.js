@@ -2,6 +2,12 @@ $(function(){
 //首页tab切换滑过效果
     $(".home-tab_menu ul li").click(function(){
         $(this).addClass("home-tab_selected").siblings().removeClass("home-tab_selected");
+        // 根据选择Tab，来切换热门城市车型
+        str = $(this).attr("id");
+        foldObjekt = str.substring(0,str.length-3);
+        $("div.home-tab_box").hide();
+        $("div#" + foldObjekt + "box").show();
+        //$("div#" + foldObjekt + "box").slideDown("slow");
     });
 //租车问答收缩
     $(".Rental-left dd").hide().first().show();
@@ -62,22 +68,41 @@ $(function(){
         if($(".screening form").is(":visible")){
             $(".screening form").hide();
             $(".ManyCar .mainShow").hide();
+            $(this).addClass("result-btnHigh");
         }else{
             $(".screening form").show();
             $(".ManyCar .mainShow").show();
+            $(this).removeClass("result-btnHigh");
         }
     });
 });
 /*判断多选框是否选中*/
 $(document).ready(function(){
     var $cr = $("#cr");
-    $cr.click(function(){
+    $cr.click(function(e){
         if($cr.is(":checked")){
             $(".Multi").show();
+            e.stopPropagation();
         }else{
-             $(".Multi").hide();
+            $(".Multi").hide();
+            e.stopPropagation();
         }
-    })
+    });
+    $(document).click(function(){
+        if(!$(".Multi").hide()){
+            $(".Multi").hide();
+        }
+    });
+});
+/*返回顶部图标滑动隐藏/显示*/
+$(window).scroll(function(){
+    var this_scrollTop = $(this).scrollTop();
+    var topImg=document.getElementById('topImg');
+    if(this_scrollTop>window.screen.availHeight){
+        $(".topImg").show();
+    }else{
+        $(".topImg").hide();
+    }
 });
 
 
