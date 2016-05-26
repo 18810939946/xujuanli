@@ -1,13 +1,10 @@
 window.onscroll=function(){//滚轮事件
     var top=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
     var node=document.getElementById('tm_top_rgba');
-    var homeFooter=document.getElementById('home-footer');
     if(top>440){
         node.style.position='fixed';
         node.style.top='5px';
         node.style.zIndex="99";
-        homeFooter.style.zIndex="100";
-        homeFooter.style.position="relative";
     }else{
         node.style.position='static';
         node.style.zIndex="0";

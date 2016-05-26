@@ -16,3 +16,15 @@ $(function(){
         }
     });
 });
+window.onscroll=function(){//关于公司的左侧菜单滚轮事件
+    var top=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop;
+    var usNav=document.getElementById('usNav');
+    if(top>150){
+        usNav.style.position='fixed';
+        usNav.style.zIndex="99";
+        usNav.style.left="inherit";
+    }else{
+        usNav.style.position='absolute';
+        usNav.style.zIndex="0";
+    }
+};

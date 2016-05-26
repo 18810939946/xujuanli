@@ -62,3 +62,13 @@ function checkEmail2(email){
         $("#MyEmail2").next(".error").text("");
     }
 }
+/*验证手机加邮箱*/
+function checkTelEmail(TelEmail){
+    var regTel = /^((13[0-9])|(15[0-9])|(17[0-9])|(18[0-9]))\d{8}$/;
+    var regEmail = /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/;
+    if(regTel.test(TelEmail) == true || regEmail.test(TelEmail) == true){
+        $("#MyTelEmail").next(".error").text("");
+    }else{
+        $("#MyTelEmail").next(".error").text("您的手机号或邮箱输入有误");
+    }
+}

@@ -1,0 +1,39 @@
+HomePage.html        首页
+
+regieter.html        注册页
+
+reg-Success.html     注册成功页
+
+resetPassword.html   重置密码
+
+reset-Success.html   重置密码成功页
+
+find.html            找回密码
+
+login.html           登录页
+
+MyOrders.html        我的订单详情页
+
+SelectModels.html    我的订单-01-选择车型
+
+vehicleDetails.html  我的订单-02-车辆详情
+
+FillOrder.html       我的订单-03-填写订单
+
+OnlinePay.html       我的订单-04-在线支付
+
+OrderFinish.html     我的订单-05-预订成功
+
+driverLicense.html   国际驾照详情页
+
+driverOne.html       国际驾照-填写订单
+
+driverTwo.html       国际驾照-在线支付
+
+driverThree.html     国际驾照-支付成功
+
+CarRental.html       租车问答
+
+No-results.html      查询订单无结果时返回的页面
+
+About-us.html        关于我们

@@ -2,9 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>信诺全球租车-预约状态</title>
+    <title>信诺全球租车-注册</title>
     <meta name="Keywords" content="">
     <meta name="Description" content="">
     <link rel="shortcut icon" type="image/ico" href="http://cn.ae-asia.com/favicon.ico">
@@ -24,7 +25,7 @@
                 </div>
             </div>
             <div class="login-actions">
-                <a class="reg-link" href="register.html" title="注册">注册</a>
+                <a class="reg-link" href="javascript:void(0);" title="注册">注册</a>
                 /
                 <a class="login-link" href="login.html" title="登录">登录</a>
             </div>
@@ -50,52 +51,78 @@
             </ul>
         </div>
     </div>
-    <!--间隔-->
-    <div class="home-interval"></div>
-    <!--选择车型-->
-    <div class="selectCar">
-        <div class="selNav">
-            <div class="home-layout clearfix">
-                <div class="NavCenter">
-                    <p><img src="images/SelectModels/number1.png"/>选择车型</p>
-                    <p><img src="images/SelectModels/number2.png"/>车辆信息</p>
-                    <p><img src="images/SelectModels/number3.png"/>填写订单</p>
-                    <p><img src="images/SelectModels/number4.png"/>在线支付</p>
-                    <p class="bd-yel"><img src="images/SelectModels/number5.png"/>预订成功</p>
-                </div>
-            </div>
+
+    <!--register内容-->
+    <div class="bigMain">
+        <div class="regBanner">
+            <img src="images/regBanner.jpg"/>
+            <p></p>
         </div>
-    </div>
-    <!--预订内容-->
-    <div class="orderFinish">
+
         <div class="home-layout clearfix">
-            <div class="finishMain">
-                <!--成功-->
-                <div class="sucText">
-                    <img src="./images/SelectModels/smile.png" alt="" class="smile"/>
-                    <h1>支付成功！</h1>
-                    <h2 class="fontRed">订单处理中</h2>
-                    <h3>请您耐心等待</h3>
-                    <p class="other">您可以：<a href="MyOrders.html">我的订单</a><a href="CarRental.html">常见问题</a></p>
+            <!--注册页-->
+            <div class="logReg">
+                <h1>
+                    <span class="regTop-lt">账号注册</span>
+                    <span class="regTop-rt">已有账号？请<a href="login.html">登录</a></span>
+                </h1>
+                <div class="Regtab">
+                    <ul class="tab_menu">
+                        <li class="Reg-selected">手机号注册</li>
+                        <li>邮箱注册</li>
+                    </ul>
+                    <div class="tab_box tabReg">
+                        <!--手机号注册-->
+                        <div>
+                            <p class="txt txt01">
+                                <input type="text" placeholder="请输入11位手机号码" autocomplete="off" maxlength="11" id="MyTel" onblur="javascript:checkTel($(this).val())"/>
+                                <b class="error"></b>
+                            </p>
+                            <p class="txt txt02">
+                                <input type="password" placeholder="请输入常用密码" maxlength="40"/>
+                                <b class="error"></b>
+                            </p>
+                            <p class="yzm">
+                                <span class="yzmTet">
+                                    <input type="text" placeholder="请输入4位短信验证码" maxlength="4" autocomplete="off"/>
+                                </span>
+                                <input type="button" value="发送验证码" class="yzmBtn"/>
+                                <b class="error"></b>
+                            </p>
+                            <p class="rebBtn01"><input type="button" value="立即注册"/></p>
+                        </div>
+                        <!--邮箱注册-->
+                        <div class="hide">
+                            <p class="txt txt01">
+                                <input type="text" placeholder="请输入邮箱账号" autocomplete="off" id="MyEmail" onblur="javascript:checkEmail($(this).val())"/>
+                                <b class="error"></b>
+                            </p>
+                            <p class="txt txt02">
+                                <input type="password" placeholder="请输入常用密码" maxlength="40"/>
+                                <b class="error"></b>
+                            </p>
+                            <p class="yzm">
+                                <span class="yzmTet">
+                                    <input type="text" placeholder="请输入收件箱内的4位验证码" maxlength="4" autocomplete="off"/>
+                                </span>
+                                <input type="button" value="发送验证码" class="yzmBtn"/>
+                                <b class="error"></b>
+                            </p>
+                            <p class="rebBtn01"><input type="button" value="立即注册"/></p>
+                        </div>
+                    </div>
                 </div>
-                <!--失败-->
-               <!-- <div class="sucText">
-                    <img src="./images/SelectModels/warn.png" alt="" class="smile"/>
-                    <h1>抱歉，您支付失败</h1>
-                    <h2>订单编号：<span>394828438482798</span></h2>
-                    <h3><input type="button" value="返回重新支付"/></h3>
-                    <p class="other">您可以：<a href="javascript:;">我的订单</a><a href="javascript:;">常见问题</a></p>
-                </div>-->
-                <!--成功-失败-end-->
-                <div class="sucFocus">
-                    <img src="images/weixin.jpg"/>
-                    <p>微信扫一扫<br/>随时随地<br/>查询、修改订单</p>
-                </div>
+                <h2 class="regFoot">
+                    <span class="regTop-rt">已有账号？却<a href="find.html">忘记密码</a></span>
+                </h2>
             </div>
         </div>
     </div>
+
+
     <!--footer-->
     <div class="home-footer">
+        <img src="images/SelectModels/top.png" class="topImg" id="topImg"/>
         <div class="home-layout clearfix">
             <div class="foot-top">
                 <div class="fl">
@@ -143,5 +170,10 @@
             www.quanqiuzuche.com 北京信诺汽车租赁有限责任公司 京ICP备16012380号-1
         </div>
     </div>
+
+
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/HomeTab.js"></script>
+    <script type="text/javascript" src="js/zhengZe.js"></script>
 </body>
 </html>

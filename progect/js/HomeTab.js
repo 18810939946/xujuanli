@@ -75,6 +75,13 @@ $(function(){
             $(this).removeClass("result-btnHigh");
         }
     });
+    /*关于公司点击按钮样式*/
+    $(".usNav li").click(function(){
+        $(this).addClass("usHigh").siblings().removeClass("usHigh");
+        var sort=$(this).index();
+        $(".usNum").eq(sort).show().siblings().hide();
+    });
+
 });
 /*判断多选框是否选中*/
 $(document).ready(function(){
@@ -104,5 +111,25 @@ $(window).scroll(function(){
         $(".topImg").hide();
     }
 });
+/*注册/登录页tab切换*/
+$(document).ready(function(){
+    var $tab_li = $('.Regtab ul li');
+    $tab_li.click(function(){
+        $(this).addClass('Reg-selected').siblings().removeClass('Reg-selected');
+        var index = $tab_li.index(this);
+        $('div.tab_box > div').eq(index).show().siblings().hide();
+    });
+});
+
+/*百度统计*/
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?a10c79a000267efd6ec3811930d07720";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+
+
 
 
